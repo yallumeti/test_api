@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route("/posts")
 def posts():
-    return jsonify(requests.get("https://jsonplaceholder.typicode.com/posts").json())
+    return jsonify(requests.get("https://jsonplaceholder.typicode.com/posts",timeout=5).json())
 
 @app.route("/comments")
 def comments():
